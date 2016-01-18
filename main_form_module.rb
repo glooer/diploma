@@ -8,34 +8,48 @@ require "Qt4"
 require "advancedQtClasses.rb"
 require "advancedStandartClasses.rb"
 require "db.rb"
-require "untitled.rb"
+require "main_form.rb"
+require "form/settings_db_action.rb"
 
 
-class Ui_Filter < Qt::Widget
-	slots "edit_lastName_change(int)", "edit_firstName_change(int)", "edit_patrName_change(int)", "edit_birthDate_change(int)", "reset_or_ok(QAbstractButton*)"
+class Ui_Filter < Qt::MainWindow
+	slots "edit_lastName_change(int)", "edit_firstName_change(int)", "edit_patrName_change(int)", "edit_birthDate_change(int)", "reset_or_ok(QAbstractButton*)", "widget_option_db()"
 
 	def initialize
 		super
+    
     @settings = Qt::Settings.new("set.ini", Qt::Settings::IniFormat)
     
     @login_db = {}
-    @login_db["hostName"] = @settings.value("hostName", Qt::Variant(""))
-    @login_db["userName"] = @settings.value("userName", Qt::Variant(""))
-    @login_db["userPassword"] = @settings.value("userPassword", Qt::Variant(""))
+    @settings.beginGroup("test");
+    @login_db["hostName"] = @settings.value("hostName", Qt::Variant.new("")).value
+    @login_db["userName"] = @settings.value("userName", Qt::Variant.new("")).value
+    @login_db["userPassword"] = @settings.value("userPassword", Qt::Variant.new("")).value
+    @settings.endGroup();
     
-		@db = Mysql2::Client.new(:host => "polenkov.ru", :username => "samson", :password => "samson", :database => "s11")
+    
+    if @login_db.include?("")
+      widget_option_db #!!!
+    end
+    
+    
+		@db = Mysql2::Client.new(:host => @login_db["hostName"], :username => @login_db["userName"], :password => @login_db["userPassword"], :database => "s11")
 		
-		@ui = Ui_Form.new
+		@ui = Ui_MainWindow.new
 		@ui.setupUi(self)
 		
-    
-    
 		connect(@ui.chk_lastName, SIGNAL("stateChanged(int)"), SLOT("edit_lastName_change(int)"))
 		connect(@ui.chk_firstName, SIGNAL("stateChanged(int)"), SLOT("edit_firstName_change(int)"))
 		connect(@ui.chk_patrName, SIGNAL("stateChanged(int)"), SLOT("edit_patrName_change(int)"))
 		connect(@ui.chk_birthDate, SIGNAL("stateChanged(int)"), SLOT("edit_birthDate_change(int)"))
 		connect(@ui.reset_or_ok, SIGNAL("clicked(QAbstractButton*)"), SLOT("reset_or_ok(QAbstractButton*)"))
+		connect(@ui.options_db, SIGNAL("triggered(bool)"), SLOT("widget_option_db()"))
 		
+	end
+	
+	def widget_option_db
+		@ui_Option_db = Ui_Option_db_act.new
+		@ui_Option_db.show #!!!
 	end
 	
 	def parse_where(input)

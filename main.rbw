@@ -3,7 +3,7 @@
 $:.unshift(File.dirname(__FILE__))
 
 require "Qt4"
-require "unitiled_module.rb"
+require "main_form_module.rb"
 
 
 app = Qt::Application.new(ARGV)
