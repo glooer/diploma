@@ -2,9 +2,9 @@
 
 require "Mysql2"
 
-class Mysql2::Client
+class Kladr < Mysql2::Client
 
-  
+ ''' 
   def rbDocumentType(type = 1, values = ["*"])
     self.query("SELECT #{values.join(", ")} FROM rbDocumentType WHERE group_id = #{type}")
   end
@@ -15,6 +15,10 @@ class Mysql2::Client
   
   def rbPolicyKind(values = ["*"])
     self.query("SELECT #{values.join(", ")} FROM rbPolicyKind")
+  end
+  '''
+  def socrbase(type = [1], values = ["*"])
+    self.query("SELECT #{values.join(", ")} FROM SOCRBASE WHERE LEVEL in (#{type.join(", ")})")
   end
   
 end
