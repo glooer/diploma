@@ -1,7 +1,7 @@
 =begin
 ** Form generated from reading ui file 'ui_settings_db.ui'
 **
-** Created: ╧э 25.  эт 01:26:55 2016
+** Created: ╧э 25.  эт 11:43:33 2016
 **      by: Qt User Interface Compiler version 4.8.6
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -124,7 +124,7 @@ class Ui_Settings_db
     end
 
     def retranslateUi(settings_db)
-    settings_db.windowTitle = Qt::Application.translate("settings_db", "Dialog", nil, Qt::Application::UnicodeUTF8)
+    settings_db.windowTitle = Qt::Application.translate("settings_db", "\320\235\320\260\321\201\321\202\321\200\320\276\320\271\320\272\320\270 \320\221\320\260\320\267\321\213 \320\224\320\260\320\275\320\275\321\213\321\205", nil, Qt::Application::UnicodeUTF8)
     @groupBox.title = Qt::Application.translate("settings_db", "\320\241\320\265\321\200\320\262\320\265\321\200", nil, Qt::Application::UnicodeUTF8)
     @label_host_name.text = Qt::Application.translate("settings_db", "\320\220\320\264\321\200\320\265\321\201", nil, Qt::Application::UnicodeUTF8)
     @label_port.text = Qt::Application.translate("settings_db", "\320\237\320\276\321\200\321\202", nil, Qt::Application::UnicodeUTF8)
