@@ -79,7 +79,7 @@
         <bool>false</bool>
        </attribute>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <widget class="QTabWidget" name="tabWidget">
@@ -106,7 +106,7 @@
             </sizepolicy>
            </property>
            <attribute name="title">
-            <string>Tab 1</string>
+            <string>Поиск</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_2">
             <item row="0" column="0" colspan="2">
@@ -326,7 +326,7 @@
           </widget>
           <widget class="QWidget" name="tab_2">
            <attribute name="title">
-            <string>Страница</string>
+            <string>Расширенный поиск</string>
            </attribute>
           </widget>
          </widget>

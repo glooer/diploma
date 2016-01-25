@@ -1,7 +1,7 @@
 =begin
-** Form generated from reading ui file 'main_form.ui'
+** Form generated from reading ui file 'ui_main_form.ui'
 **
-** Created: Âñ 24. ÿíâ 21:42:29 2016
+** Created: Ïí 25. ÿíâ 12:29:32 2016
 **      by: Qt User Interface Compiler version 4.8.6
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -13,7 +13,7 @@ class Ui_MainWindow
     attr_reader :gridLayout
     attr_reader :splitter
     attr_reader :tableView
-    attr_reader :widget
+    attr_reader :layoutWidget
     attr_reader :verticalLayout
     attr_reader :tabWidget
     attr_reader :tab
@@ -74,12 +74,12 @@ class Ui_MainWindow
     @tableView.sortingEnabled = true
     @tableView.cornerButtonEnabled = true
     @splitter.addWidget(@tableView)
-    @widget = Qt::Widget.new(@splitter)
-    @widget.objectName = "widget"
-    @verticalLayout = Qt::VBoxLayout.new(@widget)
+    @layoutWidget = Qt::Widget.new(@splitter)
+    @layoutWidget.objectName = "layoutWidget"
+    @verticalLayout = Qt::VBoxLayout.new(@layoutWidget)
     @verticalLayout.objectName = "verticalLayout"
     @verticalLayout.setContentsMargins(0, 0, 0, 0)
-    @tabWidget = Qt::TabWidget.new(@widget)
+    @tabWidget = Qt::TabWidget.new(@layoutWidget)
     @tabWidget.objectName = "tabWidget"
     @sizePolicy1 = Qt::SizePolicy.new(Qt::SizePolicy::Expanding, Qt::SizePolicy::Expanding)
     @sizePolicy1.setHorizontalStretch(0)
@@ -208,21 +208,21 @@ class Ui_MainWindow
 
     @gridLayout_2.addWidget(@edit_documentNumber, 12, 1, 1, 1)
 
-    @tabWidget.addTab(@tab, Qt::Application.translate("MainWindow", "Tab 1", nil, Qt::Application::UnicodeUTF8))
+    @tabWidget.addTab(@tab, Qt::Application.translate("MainWindow", "\320\237\320\276\320\270\321\201\320\272", nil, Qt::Application::UnicodeUTF8))
     @tab_2 = Qt::Widget.new()
     @tab_2.objectName = "tab_2"
-    @tabWidget.addTab(@tab_2, Qt::Application.translate("MainWindow", "\320\241\321\202\321\200\320\260\320\275\320\270\321\206\320\260", nil, Qt::Application::UnicodeUTF8))
+    @tabWidget.addTab(@tab_2, Qt::Application.translate("MainWindow", "\320\240\320\260\321\201\321\210\320\270\321\200\320\265\320\275\320\275\321\213\320\271 \320\277\320\276\320\270\321\201\320\272", nil, Qt::Application::UnicodeUTF8))
 
     @verticalLayout.addWidget(@tabWidget)
 
-    @reset_or_ok = Qt::DialogButtonBox.new(@widget)
+    @reset_or_ok = Qt::DialogButtonBox.new(@layoutWidget)
     @reset_or_ok.objectName = "reset_or_ok"
     @reset_or_ok.standardButtons = Qt::DialogButtonBox::Ok|Qt::DialogButtonBox::Reset
     @reset_or_ok.centerButtons = false
 
     @verticalLayout.addWidget(@reset_or_ok)
 
-    @splitter.addWidget(@widget)
+    @splitter.addWidget(@layoutWidget)
 
     @gridLayout.addWidget(@splitter, 0, 0, 1, 1)
 
@@ -269,8 +269,8 @@ class Ui_MainWindow
     @checkBox.text = Qt::Application.translate("MainWindow", "\320\232\320\276\320\275\321\202\320\260\320\272\321\202?", nil, Qt::Application::UnicodeUTF8)
     @edit_documentSerial.placeholderText = Qt::Application.translate("MainWindow", "\320\241\320\265\321\200\320\270\321\217", nil, Qt::Application::UnicodeUTF8)
     @edit_documentNumber.placeholderText = Qt::Application.translate("MainWindow", "\320\235\320\276\320\274\320\265\321\200", nil, Qt::Application::UnicodeUTF8)
-    @tabWidget.setTabText(@tabWidget.indexOf(@tab), Qt::Application.translate("MainWindow", "Tab 1", nil, Qt::Application::UnicodeUTF8))
-    @tabWidget.setTabText(@tabWidget.indexOf(@tab_2), Qt::Application.translate("MainWindow", "\320\241\321\202\321\200\320\260\320\275\320\270\321\206\320\260", nil, Qt::Application::UnicodeUTF8))
+    @tabWidget.setTabText(@tabWidget.indexOf(@tab), Qt::Application.translate("MainWindow", "\320\237\320\276\320\270\321\201\320\272", nil, Qt::Application::UnicodeUTF8))
+    @tabWidget.setTabText(@tabWidget.indexOf(@tab_2), Qt::Application.translate("MainWindow", "\320\240\320\260\321\201\321\210\320\270\321\200\320\265\320\275\320\275\321\213\320\271 \320\277\320\276\320\270\321\201\320\272", nil, Qt::Application::UnicodeUTF8))
     @menu.title = Qt::Application.translate("MainWindow", "\320\235\320\260\321\201\321\202\321\200\320\276\320\271\320\272\320\270", nil, Qt::Application::UnicodeUTF8)
     end # retranslateUi
 
