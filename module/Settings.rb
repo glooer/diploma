@@ -1,7 +1,7 @@
 class MSettings < Qt::Settings
-  def initialize(fileName = nil, fileType = nil)
-    super
-  end
+  #def initialize(fileName = nil, fileType = nil)
+  #  super
+  #end
 
   def [](name, default = nil)
     self.value(name, Qt::Variant.new(default)).value
