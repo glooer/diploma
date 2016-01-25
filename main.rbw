@@ -2,6 +2,7 @@
 #chcp 65001
 $:.unshift(File.dirname(__FILE__))
 
+require 'unicode'
 require "module/advancedQtClasses.rb"
 require "module/advancedStandartClasses.rb"
 require "Qt4"
